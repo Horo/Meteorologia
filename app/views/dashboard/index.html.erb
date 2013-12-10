@@ -1,0 +1,41 @@
+<h1>Servicio de Meteorolocogia</h1>
+
+<ul>
+  <li><strong><%= link_to "Precipitations", precipitations_path %></strong></li>
+  <li><strong><%= link_to "Temperatures", temperatures_path %></strong></li>
+</ul>
+
+<table>
+    <tr>
+      <th>Date</th>
+      <th>Province</th>
+      <th>Location</th>
+      <th>Max(°C)</th>
+      <th>Min(°C)</th>
+    </tr>
+<% if @temperature %>
+    <tr style="color:blue">
+      <th><%= @temperature.date %></th>
+      <th><%= @temperature.province %></th>
+      <th><%= @temperature.location %></th>
+      <th><%= @temperature.max %></th>
+      <th><%= @temperature.min %></th>
+    </tr>
+<% end %>
+    <tr>
+      <th>Date</th>
+      <th>Province</th>
+      <th>Location</th>
+      <th>mm</th>
+      <th>type</th>
+    </tr>
+<% if @precipitation %>
+    <tr style="color:blue">
+      <th><%= @precipitation.date %></th>
+      <th><%= @precipitation.province %></th>
+      <th><%= @precipitatioin.location %></th>
+      <th><%= @precipitation.mm %></th>
+      <th><%= @precipitation.type %></th>
+    </tr>  
+<% end %>
+</table>

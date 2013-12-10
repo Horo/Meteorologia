@@ -1,0 +1,31 @@
+<ul>
+  <li><strong><%= link_to "Temperatures", temperatures_path %></strong></li>
+  <li><strong><%= link_to "Dashboard", root_path %></strong></li>
+</ul>
+
+
+<h1>Precipitations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Province</th>
+      <th>Location</th>
+      <th>MM</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+<% @precipitations.each do |p| %>
+    <tr>
+      <td><%= p.date.to_s %></td>
+      <td><%= p.province %></td>
+      <td><%= p.location %></td>
+      <td><%= p.mm %></td>
+      <td><%= p.type %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
