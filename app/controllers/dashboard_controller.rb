@@ -1,10 +1,12 @@
+# encoding: utf-8
+
 class DashboardController < ApplicationController
 
   # GET /dashboard
 
   def index
-    @precipitation = SMN::Report.today_precipitations.measurements.select {|p| p.location == "BUENOS AIRES"}.first
-    @temperature = SMN::Report.today_temperatures.measurements.select {|t| t.location == "BUENOS AIRES"}.first
+    @precipitation = Precipitation.where(:location => "BUENOS AIRES").order("date desc").first
+    @temperature = Temperature.where(:location => "BUENOS AIRES").order("date desc").first
   end
 
 end
